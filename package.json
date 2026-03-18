@@ -1,6 +1,6 @@
 {
   "name": "apiforge-gen",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Automatically generate a complete Laravel REST API from your database schema in seconds.",
   "main": "src/cli/index.js",
   "bin": {
@@ -21,7 +21,7 @@
     "eloquent",
     "scaffold"
   ],
-  "author": "yu-on",
+  "author": "TON_USERNAME_NPM",
   "license": "ISC",
   "type": "commonjs",
   "repository": {
@@ -35,7 +35,7 @@
   "dependencies": {
     "commander": "^12.0.0",
     "mysql2": "^3.0.0",
-    "better-sqlite3": "^9.0.0",
+    "sql.js": "^1.10.0",
     "pg": "^8.0.0",
     "dotenv": "^16.0.0"
   }
