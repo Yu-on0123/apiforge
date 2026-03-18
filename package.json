@@ -1,0 +1,23 @@
+{
+  "name": "apiforge",
+  "version": "1.0.0",
+  "description": "Générateur automatique d'API REST à partir d'un schéma de base de données",
+  "main": "src/cli/index.js",
+  "bin": {
+    "apiforge": "./src/cli/index.js"
+  },
+  "scripts": {
+    "start": "node src/cli/index.js"
+  },
+  "keywords": ["api", "generator", "laravel", "rest", "cli"],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "commander": "^12.0.0",
+    "mysql2": "^3.0.0",
+    "better-sqlite3": "^9.0.0",
+    "pg": "^8.0.0",
+    "dotenv": "^16.0.0"
+  }
+}
