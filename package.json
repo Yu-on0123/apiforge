@@ -1,6 +1,6 @@
 {
   "name": "apiforge-gen",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Automatically generate a complete Laravel REST API from your database schema in seconds.",
   "main": "src/cli/index.js",
   "bin": {

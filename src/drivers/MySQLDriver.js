@@ -27,7 +27,8 @@ class MySQLDriver extends DatabaseDriver {
   async getTables() {
     const [rows] = await this.connection.execute(
       `SELECT TABLE_NAME FROM information_schema.TABLES 
-       WHERE TABLE_SCHEMA = ? AND TABLE_TYPE = 'BASE TABLE'`,
+       WHERE TABLE_SCHEMA = ? AND TABLE_TYPE = 'BASE TABLE'
+       AND TABLE_NAME NOT IN ('migrations', 'failed_jobs', 'password_resets', 'personal_access_tokens', 'cache', 'jobs', 'sessions')`,
       [this.database]
     );
     return rows.map(row => row.TABLE_NAME);

@@ -42,14 +42,28 @@ class MigrationGenerator {
   buildSchema(table) {
     const lines = [];
     const timestampCols = ['created_at', 'updated_at'];
+    const foreignKeyColumns = table.getRelations()
+      .filter(r => r.type === 'belongsTo')
+      .map(r => r.foreignKey);
+  
     for (const column of table.getColumns()) {
       if (column.isPrimary) continue;
       if (timestampCols.includes(column.name)) continue;
-      const laravelType = this.mapType(column.getType());
-      let line = `            $table->${laravelType}('${column.name}')`;
-      if (column.isNullable()) line += '->nullable()';
-      line += ';';
-      lines.push(line);
+  
+      if (foreignKeyColumns.includes(column.name)) {
+        const relation = table.getRelations().find(r => r.foreignKey === column.name && r.type === 'belongsTo');
+        let line = `            $table->foreignId('${column.name}')`;
+        if (column.isNullable()) line += '->nullable()';
+        line += `->constrained('${relation.toTable}')->onDelete('cascade')`;
+        line += ';';
+        lines.push(line);
+      } else {
+        const laravelType = this.mapType(column.getType());
+        let line = `            $table->${laravelType}('${column.name}')`;
+        if (column.isNullable()) line += '->nullable()';
+        line += ';';
+        lines.push(line);
+      }
     }
     return lines.join('\n');
   }
