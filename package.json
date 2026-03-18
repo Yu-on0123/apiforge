@@ -1,7 +1,7 @@
 {
-  "name": "apiforge",
+  "name": "apiforge-gen",
   "version": "1.0.0",
-  "description": "Générateur automatique d'API REST à partir d'un schéma de base de données",
+  "description": "Automatically generate a complete Laravel REST API from your database schema in seconds.",
   "main": "src/cli/index.js",
   "bin": {
     "apiforge": "./src/cli/index.js"
@@ -9,10 +9,29 @@
   "scripts": {
     "start": "node src/cli/index.js"
   },
-  "keywords": ["api", "generator", "laravel", "rest", "cli"],
-  "author": "",
+  "keywords": [
+    "api",
+    "generator",
+    "laravel",
+    "rest",
+    "cli",
+    "mysql",
+    "sqlite",
+    "postgres",
+    "eloquent",
+    "scaffold"
+  ],
+  "author": "yu-on",
   "license": "ISC",
   "type": "commonjs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Yu-on0123/apiforge.git"
+  },
+  "homepage": "https://github.com/Yu-on0123/apiforge#readme",
+  "bugs": {
+    "url": "https://github.com/Yu-on0123/apiforge/issues"
+  },
   "dependencies": {
     "commander": "^12.0.0",
     "mysql2": "^3.0.0",

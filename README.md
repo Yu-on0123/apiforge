@@ -9,9 +9,7 @@ Générateur automatique d'API REST à partir d'un schéma de base de données r
 
 ## Installation
 ```bash
-git clone https://github.com/votre-repo/apiforge.git
-cd apiforge
-npm install
+npm install -g apiforge-gen
 ```
 
 Copiez le fichier de configuration :
