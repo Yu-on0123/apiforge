@@ -1,7 +1,10 @@
 node_modules/
 .env
 output/
+output_*/
+mon_projet_test/
 *.db
 *.sqlite
 .DS_Store
 Thumbs.db
+package-lock.json
